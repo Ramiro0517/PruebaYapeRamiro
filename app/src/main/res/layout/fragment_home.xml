@@ -9,14 +9,11 @@
     tools:context=".ui.home.HomeFragment">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:layout_gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="24sp" />
+        android:id="@+id/recyclerView"
+        android:padding="16dp"/>
 
 
 </FrameLayout>
