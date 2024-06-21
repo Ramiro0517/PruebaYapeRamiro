@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.pruebayape.R
 import com.example.pruebayape.databinding.FragmentMapBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MapFragment : Fragment() {
 
     private var _binding: FragmentMapBinding? = null
