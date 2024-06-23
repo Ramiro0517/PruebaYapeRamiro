@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebayape.databinding.FragmentHomeBinding
 import com.example.pruebayape.ui.home.adapter.HomeAdapter
@@ -34,6 +36,24 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
+        setupSearchView()
+    }
+
+
+    private fun setupSearchView() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // Realiza la búsqueda cuando el usuario envía la consulta de búsqueda
+                homeAdapter.filter(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Realiza la búsqueda mientras el usuario está escribiendo
+                homeAdapter.filter(newText)
+                return true
+            }
+        })
     }
 
     private fun initUI(){
@@ -42,7 +62,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(onItemSelectedListener = {
+
+           /* findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailFragment()
+            )*/
+        })
         binding.apply {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = homeAdapter
@@ -53,7 +78,10 @@ class HomeFragment : Fragment() {
 
         lifecycleScope.launch {
             homeFragmentViewModel.recetas.observe(viewLifecycleOwner) {
-               homeAdapter.updateData(it)
+                it.let {
+                    homeAdapter.updateData(it)
+                }
+
             }
         }
 

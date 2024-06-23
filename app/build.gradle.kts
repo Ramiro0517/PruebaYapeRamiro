@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -44,6 +46,7 @@ android {
 dependencies {
 
     val navVersion= "2.7.7"
+    val hiltVersion = "2.48"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -58,11 +61,22 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     //daggertHilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-compiler:2.48")
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-compiler:$hiltVersion")
 
     //picasso
     implementation("com.squareup.picasso:picasso:2.71828")
+
+    //retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    //okhttp3
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+
+    //coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+
     
 
 

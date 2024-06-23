@@ -1,6 +1,7 @@
 package com.example.pruebayape.domain.model
 
-data class RecetaInfo (
+
+data class RecetaResponse (
     val id: Int,
     val nombre: String,
     val ingredientes: List<String>,
