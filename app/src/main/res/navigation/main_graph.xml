@@ -19,10 +19,20 @@
         android:name="com.example.pruebayape.ui.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="receta"
+            app:argType="com.example.pruebayape.domain.model.RecetaResponse" />
+        <action
+            android:id="@+id/action_detailFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.pruebayape.ui.map.MapFragment"
         android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map" >
+        <argument
+            android:name="receta"
+            app:argType="com.example.pruebayape.domain.model.RecetaResponse" />
+    </fragment>
 </navigation>

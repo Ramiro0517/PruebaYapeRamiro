@@ -63,10 +63,9 @@ class HomeFragment : Fragment() {
 
     private fun initRecycler() {
         homeAdapter = HomeAdapter(onItemSelectedListener = {
-
-           /* findNavController().navigate(
-                HomeFragmentDirections.actionHomeFragmentToDetailFragment()
-            )*/
+        Toast.makeText(requireContext(), it.nombre, Toast.LENGTH_SHORT).show()
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(it)
+        findNavController().navigate(action)
         })
         binding.apply {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())

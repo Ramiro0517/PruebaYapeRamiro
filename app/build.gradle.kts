@@ -4,6 +4,7 @@ plugins {
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-parcelize")
 
 }
 
@@ -76,6 +77,12 @@ dependencies {
     //coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+
+    //Maps google
+    implementation("com.google.android.gms:play-services-maps:18.0.1")
+
+    //lifecycle
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.2") //corroutinas
 
     
 
