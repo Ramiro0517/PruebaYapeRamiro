@@ -54,6 +54,10 @@ class HomeFragment : Fragment() {
                 return true
             }
         })
+        binding.searchView.setOnClickListener {
+            // Expande el SearchView y muestra el teclado cuando se hace clic en cualquier parte del SearchView
+            binding.searchView.isIconified = false
+        }
     }
 
     private fun initUI(){

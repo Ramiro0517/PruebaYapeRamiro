@@ -10,5 +10,7 @@ data class RecetaResponse (
     val nombre: String,
     val ingredientes: List<String>,
     val instrucciones: List<String>,
-    val imagen: String
+    val imagen: String,
+    val origen:String,
+    val coordenadas: Coordenadas
 ) :Parcelable

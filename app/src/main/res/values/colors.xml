@@ -3,10 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#FF7F50</color>
-    <color name="colorPrimaryDark">#F5A623</color>
-    <color name="colorAccent">#ee9361</color>
-    <color name="secondary">#5CB85C</color>
-    <color name="secondaryDark">#C0F0C8</color>
-    <color name="secondaryLight">#FF67F6E7</color>
+    <color name="colorPrimary">#FF7043</color> <!-- Un tono de naranja -->
+    <color name="colorPrimaryDark">#BF360C</color> <!-- Un tono de naranja oscuro -->
+    <color name="colorAccent">#FFAB40</color> <!-- Un tono de naranja claro -->
+    <color name="secondary">#8D6E63</color> <!-- Un tono de marrón -->
+    <color name="secondaryDark">#5D4037</color> <!-- Un tono de marrón oscuro -->
+    <color name="secondaryLight">#D7CCC8</color> <!-- Un tono de marrón claro -->
 </resources>
